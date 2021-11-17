@@ -3,7 +3,7 @@ import { Button, StyleSheet, TextInput, View, Text, FlatList, Modal } from 'reac
 import { useState } from 'react';
 
 
-const InputBar = () => {
+const InputBar = ({back}) => {
 
     const [text, onChangeText] = useState("");
     const [itemList, setItemList] = useState([])
@@ -38,6 +38,10 @@ const InputBar = () => {
     return(
         <View style={styles.screen}>
             <View style={styles.inputContainer}>
+                <Button style={styles.btn}
+                    onPress={back}
+                    title="<"
+                />
                 <TextInput
                     style={styles.input}
                     onChangeText={onChangeText}

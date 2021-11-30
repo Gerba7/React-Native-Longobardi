@@ -6,24 +6,13 @@ import Home from './components/Home';
 import { useFonts } from 'expo-font';
 import { useState } from 'react';
 import AppLoading from 'expo-app-loading';
+import TabNavigator from './navigation/TabNavigator';
 
 export default function App() {
 
-  const [home, setStart] = useState(false)
-
-  const start = () => {
-    setStart(true)
-  }
-
-  const back = () => {
-    setStart(false)
-  }
-
-  return (
-    <View style={styles.container}>
-      { home ? <InputBar back={back} /> : <Home start={start} /> }
-    </View>
-  );
+  <View>
+    <TabNavigator />
+  </View>
 }
 
 const styles = StyleSheet.create({

@@ -5,15 +5,21 @@ import { useState } from 'react';
 
 const Home = ({start}) => {
 
+    const [home, setStart] = useState(false)
 
-    return(
-        <View style={styles.screen}>
-                <Button style={styles.btn}
-                    onPress={start}
-                    title="Add Items"
-                />
-        </View>
-    )
+    const start = () => {
+      setStart(true)
+    }
+  
+    const back = () => {
+      setStart(false)
+    }
+  
+    return (
+      <View style={styles.container}>
+        { home ? <InputBar back={back} /> : <Home start={start} /> }
+      </View>
+    );
 
 }
 
